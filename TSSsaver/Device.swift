@@ -9,12 +9,12 @@
 import Foundation
 
 struct Device {
-    let model = Sysctl.model
-    let boardConfig = Sysctl.machine
+    static let model = Sysctl.model
+    static let boardConfig = Sysctl.machine
     
     #if DEBUG
-        let ecid = "4907733951592" as? String // Needs to be optional to shut the compiler up
+    static let ecid = "4907733951592" as? String // Needs to be optional to shut the compiler up
     #else
-        let ecid = get_ecid() as? String
+    static let ecid = get_ecid() as! String
     #endif
 }

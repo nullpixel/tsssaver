@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		170C51841EDC393100372C4F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C51831EDC393100372C4F /* Device.swift */; };
-		170C51861EDC41E700372C4F /* UIViewController+CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C51851EDC41E700372C4F /* UIViewController+CurrentViewController.swift */; };
 		170C51881EDC47FE00372C4F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C51871EDC47FE00372C4F /* ProgressHUD.swift */; };
 		170C518B1EDC4CD500372C4F /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C51891EDC4CD500372C4F /* Blob.swift */; };
 		170C518C1EDC4CD500372C4F /* SaverError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C518A1EDC4CD500372C4F /* SaverError.swift */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		170C51831EDC393100372C4F /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		170C51851EDC41E700372C4F /* UIViewController+CurrentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CurrentViewController.swift"; sourceTree = "<group>"; };
 		170C51871EDC47FE00372C4F /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		170C51891EDC4CD500372C4F /* Blob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
 		170C518A1EDC4CD500372C4F /* SaverError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaverError.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		17F7BED71E9F6C67001452D4 /* Misc. */ = {
 			isa = PBXGroup;
 			children = (
-				170C51851EDC41E700372C4F /* UIViewController+CurrentViewController.swift */,
 				17F7BEDA1E9F6F55001452D4 /* CwlSysctl.swift */,
 				17F7BEDC1E9F716C001452D4 /* API.swift */,
 				170C51871EDC47FE00372C4F /* ProgressHUD.swift */,
@@ -203,7 +200,6 @@
 			files = (
 				17F7BEDE1E9F751D001452D4 /* ViewController.swift in Sources */,
 				170C518C1EDC4CD500372C4F /* SaverError.swift in Sources */,
-				170C51861EDC41E700372C4F /* UIViewController+CurrentViewController.swift in Sources */,
 				170C518B1EDC4CD500372C4F /* Blob.swift in Sources */,
 				17F7BEDB1E9F6F55001452D4 /* CwlSysctl.swift in Sources */,
 				177420031ED1D543003C3166 /* BlobSaver.swift in Sources */,

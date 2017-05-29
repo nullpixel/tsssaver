@@ -29,11 +29,9 @@ struct SaverError: CustomStringConvertible {
         return "TSS Saver error: \(message ?? "No error message")\(code != nil ? " (Error code: \(code!))" : "")"
     }
     
-    func presentError() {
-        // hacky, and lazy, ik but I wrote this super late last night
+    var alertController: UIAlertController {
         let alert = UIAlertController(title: "An error occured", message: "\(self.description)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.destructive, handler: nil))
-        
-        UIApplication.shared.currentViewController?.present(alert, animated: true)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        return alert
     }
 }

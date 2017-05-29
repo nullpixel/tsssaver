@@ -18,7 +18,6 @@ class BlobSaver {
             "deviceID": model
         ], .formURLEncoded)) { response, error in
             guard let response = response else { handler(nil, SaverError(message: "Server sent no response")); return }
-            
             if let dict = API.shared.decode(jsonData: response) {
                 if error != nil || dict["success"] as? Bool == false {
                     if let errorDict = dict["error"] as? [String: AnyObject] {

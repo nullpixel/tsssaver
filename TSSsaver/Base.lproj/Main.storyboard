@@ -14,7 +14,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tfQ-fQ-Smq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="y1n-zH-q1n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="y1n-zH-q1n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -154,7 +154,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TSSSaver" id="AXw-NA-HdJ"/>
                     <connections>
-                        <outlet property="blobButton" destination="7Uk-kR-dCT" id="qr6-pT-k1R"/>
                         <outlet property="boardconfLabel" destination="ouP-Mc-rqN" id="agy-gY-eO9"/>
                         <outlet property="ecidLabel" destination="sHX-qJ-iWr" id="zv1-sd-2U3"/>
                         <outlet property="modelLabel" destination="bXQ-ii-2Gx" id="o2V-kS-uiU"/>

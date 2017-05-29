@@ -15,6 +15,6 @@ struct Device {
     #if DEBUG
     static let ecid = "4907733951592" as? String // Needs to be optional to shut the compiler up
     #else
-    static let ecid = get_ecid() as! String
+    static let ecid = get_ecid() as? String
     #endif
 }

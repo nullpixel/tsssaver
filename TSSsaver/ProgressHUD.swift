@@ -9,9 +9,6 @@
 
 import UIKit
 
-import UIKit
-import Foundation
-
 class ActivityIndicatorView {
     var view: UIView!
     
@@ -46,15 +43,18 @@ class ActivityIndicatorView {
     }
     
     func startAnimating() {
-        self.activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        OperationQueue.main.addOperation {
+            self.activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+        }
     }
     
     func stopAnimating() {
-        self.activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-        
-        self.view.removeFromSuperview()
+        OperationQueue.main.addOperation {
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            self.view.removeFromSuperview()
+        }
     }
-    //end
 }

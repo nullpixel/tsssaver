@@ -1,0 +1,10 @@
+Package: co.dynastic.tsssaver
+Name: TSS Saver
+Version: 1.2.0
+Architecture: iphoneos-arm
+Description: A one-click tool to save blobs using TSSsaver.1conan.com
+Depiction: https://repo.nullpixel.uk/depiction/co.dynastic.tsssaver/
+Maintainer: Jamie Bishop <jamie@dynastic.co>
+Author: Jamie Bishop <jamie@dynastic.co>
+Section: Utilities
+Depends: ${LIBSWIFT}, firmware (>= 8.0)

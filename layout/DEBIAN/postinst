@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "If you see this, please ping @nitoTV on twitter, telling him how great swift is."
-
+echo "If you see this, ping @nitoTV on twitter telling him how great Swift is."

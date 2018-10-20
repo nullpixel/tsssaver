@@ -16,6 +16,10 @@ class DeviceInfoViewController: UITableViewController {
         super.viewDidLoad()
         
         title = "TSS Saver"
+        
+        guard Device.current.ecid != nil else {
+            return showAlert(title: "Could not find ECID", message: "We could not find your device ECID. Please ensure that you are running on a jailbroken device.", with: [])
+        }
     }
 }
 
@@ -37,7 +41,7 @@ extension DeviceInfoViewController {
         // FIXME: - Terrible, terrible code
         if indexPath.section == 0 {
             switch indexPath.row {
-            case 0: return DetailTableViewCell(title: "ECID", value: Device.current.ecid ?? "unknown")
+            case 0: return DetailTableViewCell(title: "ECID", value: Device.current.ecid ?? "Unknown")
             case 1: return DetailTableViewCell(title: "Board Configuration", value: Device.current.boardConfig)
             case 2: return DetailTableViewCell(title: "Model", value: Device.current.model)
             default: fatalError("Row out of range.")
@@ -57,16 +61,18 @@ extension DeviceInfoViewController {
                 }
                 
                 if let url = blob?.url {
-                    let alert = UIAlertController(title: "Saved Blobs", message: "Your blobs were successfully saved.", preferredStyle: .alert)
+                    let actions = [
+                        UIAlertAction(title: "Open", style: .default) { _ in
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(url)
+                            } else {
+                                UIApplication.shared.openURL(url)
+                            }
+                        },
+                        UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+                    ]
                     
-                    alert.addAction(UIAlertAction(title: "Open", style: .default) { _ in
-                        if #available(iOS 10.0, *) {
-                            return UIApplication.shared.open(url)
-                        }
-                        return UIApplication.shared.openURL(url)
-                    })
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    self.showAlert(title: "Saved Blobs", message: "Your blobs were successfully saved.", with: actions)
                 }
             }
         }
@@ -92,15 +98,5 @@ extension DeviceInfoViewController {
         
         let cell = tableView.cellForRow(at: indexPath)
         UIPasteboard.general.string = cell?.detailTextLabel?.text
-    }
-}
-
-extension UIViewController {
-    func showAlert(title: String? = nil, message: String? = nil, handler: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
-            handler?()
-        })
-        present(alert, animated: true, completion: nil)
     }
 }

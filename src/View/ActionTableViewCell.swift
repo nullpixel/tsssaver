@@ -26,6 +26,7 @@ class ActionTableViewCell: UITableViewCell {
     }
     
     private func setup() {
+        button.titleLabel?.textAlignment = .center
         button.isUserInteractionEnabled = false
         
         contentView.addSubview(button)
@@ -33,7 +34,8 @@ class ActionTableViewCell: UITableViewCell {
     
     private func layout() {
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     

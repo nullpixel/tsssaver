@@ -11,6 +11,7 @@
 		17A0063D217B7A12003AFDC7 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0063C217B7A12003AFDC7 /* ActionTableViewCell.swift */; };
 		17A0063F217B7BC3003AFDC7 /* BlobResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0063E217B7BC3003AFDC7 /* BlobResponse.swift */; };
 		17A00642217B7D22003AFDC7 /* UIView+pinToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A00641217B7D21003AFDC7 /* UIView+pinToSuperview.swift */; };
+		17A00645217B8A7A003AFDC7 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A00644217B8A7A003AFDC7 /* UIViewController+showAlert.swift */; };
 		17D140DA2151641B002A1091 /* ECID.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CD23F210DE39F00E225C1 /* ECID.m */; };
 		17D140DE21516425002A1091 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD244210DE39F00E225C1 /* CwlSysctl.swift */; };
 		17D140DF21516427002A1091 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD246210DE39F00E225C1 /* ProgressHUD.swift */; };
@@ -51,6 +52,7 @@
 		17A0063C217B7A12003AFDC7 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		17A0063E217B7BC3003AFDC7 /* BlobResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobResponse.swift; sourceTree = "<group>"; };
 		17A00641217B7D21003AFDC7 /* UIView+pinToSuperview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+pinToSuperview.swift"; sourceTree = "<group>"; };
+		17A00644217B8A7A003AFDC7 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
 		17D140D92151640B002A1091 /* TSSSaver Stub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TSSSaver Stub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D140E42151673A002A1091 /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
 		17F9A6CC215403860077D7FD /* TSSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSSResponse.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				17A00641217B7D21003AFDC7 /* UIView+pinToSuperview.swift */,
+				17A00644217B8A7A003AFDC7 /* UIViewController+showAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				17D140DF21516427002A1091 /* ProgressHUD.swift in Sources */,
 				17F9A6D32154042A0077D7FD /* Result.swift in Sources */,
 				17D140DE21516425002A1091 /* CwlSysctl.swift in Sources */,
+				17A00645217B8A7A003AFDC7 /* UIViewController+showAlert.swift in Sources */,
 				175376262152BD1200D1D669 /* DetailTableViewCell.swift in Sources */,
 				17A0063D217B7A12003AFDC7 /* ActionTableViewCell.swift in Sources */,
 				17D140DA2151641B002A1091 /* ECID.m in Sources */,

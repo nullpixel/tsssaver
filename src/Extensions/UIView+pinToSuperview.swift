@@ -15,7 +15,10 @@ extension UIView {
     }
     
     /// Pins this view to another view
+    /// Note: this sets `translatesAutoresizingMaskIntoConstraints` to false
     func pin(to view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
         leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         topAnchor.constraint(equalTo: view.topAnchor).isActive = true

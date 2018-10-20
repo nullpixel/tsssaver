@@ -1,6 +1,3 @@
 #!/bin/bash
-echo "Rebuilding UICache, may take up to 30 secs"
-su mobile -c uicache
-echo "Done rebuilding the UICache. Have a good day. Or don't."
 echo "If you see this, please ping @nitoTV on twitter, telling him how great swift is."
 

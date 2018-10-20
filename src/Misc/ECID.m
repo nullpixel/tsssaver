@@ -2,14 +2,15 @@
 //  ECID.m
 //  TSSsaver
 //
-//  Created by Jamie Bishop on 13/04/2017.
+//  Created by nullpixel on 13/04/2017.
 //  Copyright © 2017 Dynastic Development. All rights reserved.
 //
 
 @import Foundation;
 #import <IOKit/IOKitLib.h>
 
-CFStringRef get_ecid() {
+CFStringRef getECID() {
+    
     CFMutableDictionaryRef matching = IOServiceMatching("IOPlatformExpertDevice");
     io_service_t service = IOServiceGetMatchingService(kIOMasterPortDefault, matching);
     if (!service) {

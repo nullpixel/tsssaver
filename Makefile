@@ -1,9 +1,11 @@
 TARGET = iphone:latest:9.0
 
+rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+
 include $(THEOS)/makefiles/common.mk
 
 APPLICATION_NAME = TSSSaver
-TSSSaver_FILES = $(wildcard src/*.swift) $(wildcard src/*.m)
+TSSSaver_FILES = $(call rwildcard, src/, *.swift *.m)
 TSSSaver_CFLAGS = -fobjc-arc
 TSSSaver_FRAMEWORKS = UIKit CoreGraphics
 TSSSaver_PRIVATE_FRAMEWORKS = IOKit
@@ -12,14 +14,5 @@ TSSSaver_CODESIGN_FLAGS = -SEntitlements.xml
 
 include $(THEOS_MAKE_PATH)/application.mk
 
-$(THEOS_OBJ_DIR)/%.storyboardc:: %.storyboard
-	$(ECHO_COMPILING)xcrun -sdk iphoneos ibtool --errors --warnings --notices --output-format human-readable-text --module TSSSaver --target-device iphone --minimum-deployment-target 9.0 --compile "$@" "$<"$(ECHO_END)
-
-before-TSSSaver-all:: $(THEOS_OBJ_DIR)/src/LaunchScreen.storyboardc $(THEOS_OBJ_DIR)/src/Main.storyboardc
-
-stage::
-	cp -r $(THEOS_OBJ_DIR)/src/LaunchScreen.storyboardc $(THEOS_STAGING_DIR)/Applications/TSSsaver.app/LaunchScreen.storyboardc
-	cp -r $(THEOS_OBJ_DIR)/src/Main.storyboardc $(THEOS_STAGING_DIR)/Applications/TSSsaver.app/Main.storyboardc
-
 after-install::
-	install.exec "killall \"TSSSaver\"" || true
+	install.exec "killall \"TSSSaver\"; sblaunch co.dynastic.tsssaver" || true

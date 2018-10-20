@@ -5,4 +5,4 @@
 @import Foundation;
 #import <IOKit/IOKitLib.h>
 
-CFStringRef get_ecid() CF_RETURNS_RETAINED;
+_Nullable CFStringRef getECID() CF_RETURNS_RETAINED;

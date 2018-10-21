@@ -14,7 +14,7 @@ struct BlobResponse: TSSResponse {
 
     let error: SaverError?
     
-    struct SaverError: Decodable {
+    struct SaverError: Error, Decodable {
         let code: Int
         let message: String
     }

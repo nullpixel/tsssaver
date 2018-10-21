@@ -52,27 +52,26 @@ extension DeviceInfoViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // FIXME: - Clean this up
         // TODO: - Add activity indicator
         if indexPath.section == 1 {
-            BlobSaver().save(for: Device.current) { blob in
-                if let error = blob?.error {
-                    return self.showAlert(title: "An Error Occured", message: error.message)
-                }
-                
-                if let url = blob?.url {
+            BlobSaver().save(for: Device.current) { result in
+                // FIXME: - Clean this up
+                switch result {
+                case .success(let blob):
                     let actions = [
                         UIAlertAction(title: "Open", style: .default) { _ in
                             if #available(iOS 10.0, *) {
-                                UIApplication.shared.open(url)
+                                UIApplication.shared.open(blob.url)
                             } else {
-                                UIApplication.shared.openURL(url)
+                                UIApplication.shared.openURL(blob.url)
                             }
                         },
                         UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
                     ]
                     
-                    self.showAlert(title: "Saved Blobs", message: "Your blobs were successfully saved.", with: actions)
+                    return self.showAlert(title: "Saved Blobs", message: "Your blobs were successfully saved.", with: actions)
+                case .failure(let error):
+                    return self.showAlert(title: "An Error Occured", message: error.errorDescription)
                 }
             }
         }

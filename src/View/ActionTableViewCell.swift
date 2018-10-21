@@ -12,6 +12,20 @@ class ActionTableViewCell: UITableViewCell {
     private(set) var button = UIButton()
     private var activityIndicator = UIActivityIndicatorView(style: .gray)
     
+    var isAnimating: Bool = false {
+        didSet {
+            isUserInteractionEnabled = !isAnimating
+            accessoryView?.isHidden = isAnimating
+            button.alpha = isAnimating ? 0.5 : 1
+            
+            if isAnimating {
+                activityIndicator.startAnimating()
+            } else {
+                activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
     convenience init(title: String) {
         self.init(style: .default, reuseIdentifier: nil)
         
@@ -24,19 +38,6 @@ class ActionTableViewCell: UITableViewCell {
         
         setup()
         layout()
-    }
-    
-    func startActivity() {
-        isUserInteractionEnabled = false
-        accessoryView?.isHidden = false
-        activityIndicator.startAnimating()
-        button.alpha = 0.5
-    }
-    
-    func stopActivity() {
-        isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        button.alpha = 1
     }
     
     private func setup() {

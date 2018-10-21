@@ -54,11 +54,11 @@ extension DeviceInfoViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // FIXME: - Clean this up
         if indexPath.section == 1 {
-            let cell = tableView.cellForRow(at: indexPath) as! ActionTableViewCell!
-            cell?.startActivity()
+            let cell = tableView.cellForRow(at: indexPath) as! ActionTableViewCell
+            cell.isAnimating = true
 
             BlobSaver().save(for: Device.current) { result in
-                DispatchQueue.main.async { cell?.stopActivity() }
+                DispatchQueue.main.async { cell.isAnimating = false }
 
                 switch result {
                 case .success(let blob):

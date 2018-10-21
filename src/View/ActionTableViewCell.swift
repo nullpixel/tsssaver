@@ -9,7 +9,8 @@
 import UIKit
 
 class ActionTableViewCell: UITableViewCell {
-    var button = UIButton()
+    private(set) var button = UIButton()
+    private var activityIndicator = UIActivityIndicatorView(style: .gray)
     
     convenience init(title: String) {
         self.init(style: .default, reuseIdentifier: nil)
@@ -25,7 +26,23 @@ class ActionTableViewCell: UITableViewCell {
         layout()
     }
     
+    func startActivity() {
+        isUserInteractionEnabled = false
+        accessoryView?.isHidden = false
+        activityIndicator.startAnimating()
+        button.alpha = 0.5
+    }
+    
+    func stopActivity() {
+        isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        button.alpha = 1
+    }
+    
     private func setup() {
+        accessoryView = activityIndicator
+        accessoryView?.isHidden = true
+        
         button.titleLabel?.textAlignment = .center
         button.isUserInteractionEnabled = false
         

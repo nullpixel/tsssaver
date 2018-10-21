@@ -15,7 +15,6 @@
 		17A00645217B8A7A003AFDC7 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A00644217B8A7A003AFDC7 /* UIViewController+showAlert.swift */; };
 		17D140DA2151641B002A1091 /* ECID.m in Sources */ = {isa = PBXBuildFile; fileRef = 179CD23F210DE39F00E225C1 /* ECID.m */; };
 		17D140DE21516425002A1091 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD244210DE39F00E225C1 /* CwlSysctl.swift */; };
-		17D140DF21516427002A1091 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD246210DE39F00E225C1 /* ProgressHUD.swift */; };
 		17D140E02151642B002A1091 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD248210DE39F00E225C1 /* API.swift */; };
 		17D140E12151642D002A1091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD24A210DE39F00E225C1 /* AppDelegate.swift */; };
 		17D140E22151642F002A1091 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CD249210DE39F00E225C1 /* Device.swift */; };
@@ -30,7 +29,6 @@
 		179AAF81217CA2D9003DF6E1 /* Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
 		179CD23F210DE39F00E225C1 /* ECID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECID.m; sourceTree = "<group>"; };
 		179CD244210DE39F00E225C1 /* CwlSysctl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
-		179CD246210DE39F00E225C1 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		179CD247210DE39F00E225C1 /* TSSsaver-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TSSsaver-Bridging-Header.h"; sourceTree = "<group>"; };
 		179CD248210DE39F00E225C1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		179CD249210DE39F00E225C1 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		17A0063B217B79FC003AFDC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				179CD246210DE39F00E225C1 /* ProgressHUD.swift */,
 				17A0063C217B7A12003AFDC7 /* ActionTableViewCell.swift */,
 				175376252152BD1200D1D669 /* DetailTableViewCell.swift */,
 			);
@@ -266,7 +263,6 @@
 			files = (
 				17D140E12151642D002A1091 /* AppDelegate.swift in Sources */,
 				17D140E22151642F002A1091 /* Device.swift in Sources */,
-				17D140DF21516427002A1091 /* ProgressHUD.swift in Sources */,
 				17F9A6D32154042A0077D7FD /* Result.swift in Sources */,
 				179AAF82217CA2D9003DF6E1 /* Blob.swift in Sources */,
 				17D140DE21516425002A1091 /* CwlSysctl.swift in Sources */,

@@ -52,10 +52,14 @@ extension DeviceInfoViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: - Add activity indicator
+        // FIXME: - Clean this up
         if indexPath.section == 1 {
+            let cell = tableView.cellForRow(at: indexPath) as! ActionTableViewCell!
+            cell?.startActivity()
+
             BlobSaver().save(for: Device.current) { result in
-                // FIXME: - Clean this up
+                DispatchQueue.main.async { cell?.stopActivity() }
+
                 switch result {
                 case .success(let blob):
                     let actions = [
@@ -82,6 +86,12 @@ extension DeviceInfoViewController {
 
 // MARK: - UITableViewDelegate
 extension DeviceInfoViewController {
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        // Only show taps on the button cell
+        return indexPath.section == 1
+    }
+    
     override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return indexPath.section == 0
     }
